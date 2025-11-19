@@ -12,15 +12,10 @@
                 
             </div>
             <h1>{{title}}</h1>
-            <p>Show indhold: {{showIndhold}}</p>
-            <button class="btn" v-on:click="ChangeShowIndholdStatus">Vis/Vis ikke indhold</button>
-
-            <div v-if="showIndhold" class="indholdsFortegnelse">
-                <p>Denne tamplate indeholder:</p>
-                <ul>
-                    <li v-for="item in indhold">{{item}}</li>
-                </ul>
-            </div>
+            <button @click="getAllAktiehandler">Hent aktiehandler</button>
+            <ul>
+                <li v-for="aktie in filtherSortedAktiehandler">{{aktie.aktieNavn}}, {{aktie.antal}}, {{aktie.handelspris}}</li>
+            </ul>
 
         </div>
         </div>
@@ -32,5 +27,9 @@
         <script>
             const mountedApp = app.mount('#app')
         </script>
+        <!--Import axios-->
+        <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+    
     </body>
 </html>
