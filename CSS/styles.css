@@ -1,8 +1,24 @@
 h1{
-    color:rgb(222, 65, 239);
-    font-style: italic;
+    color:rgb(0, 0, 0);
 }
 
 .indholdsFortegnelse{
     font-size:18px;
+}
+
+.OversigtAktieHandel{
+
+    width: 100%;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+thead {
+  background-color: #afabab;
+  color: white;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #d0d7de;
 }

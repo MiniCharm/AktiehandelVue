@@ -13,9 +13,30 @@
             </div>
             <h1>{{title}}</h1>
             <button @click="getAllAktiehandler">Hent aktiehandler</button>
-            <ul>
-                <li v-for="aktie in filtherSortedAktiehandler">{{aktie.aktieNavn}}, {{aktie.antal}}, {{aktie.handelspris}}</li>
-            </ul>
+
+            <table class="OversigtAktieHandel">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>AktieNavn</th>
+                        <th>Antal</th>
+                        <th>Handelspris</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="aktie in filtherSortedAktiehandler" :key="aktie.id">
+                        <td>{{aktie.id}}</td>
+                        <td>{{ aktie.aktieNavn }}</td>
+                        <td>{{ aktie.antal }}</td>
+                        <td>{{ aktie.handelspris }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
 
         </div>
         </div>
