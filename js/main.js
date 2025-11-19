@@ -9,7 +9,7 @@ const app = Vue.createApp({
             aktieID:0,
             aktieNavn:'',
             antal:0,
-            aktiHandelsPris:0,
+            aktiehandelsPris:0,
             statusCode:''
 
         }
@@ -28,6 +28,20 @@ const app = Vue.createApp({
                 error=> {
                     console.log(error)
                 }
+            )
+        },
+        postAktiehandel(){
+            console.log('er i post')
+
+            axios.post(baseURL,{"aktieNavn":this.aktieNavn,"antal":this.antal,"handelspris":this.aktiehandelsPris})
+            .then( response =>{
+                console.log(response)
+                this.statusCode = response.status
+            }
+            )
+            .catch(
+                error => 
+                    console.log(error)
             )
         }
     }

@@ -12,6 +12,14 @@
                 
             </div>
             <h1>{{title}}</h1>
+            Navn: <input type="text"v-model="aktieNavn">
+               Antal: <input type="number" v-model="antal">
+               Handelspris: <input type="number" v-model="aktiehandelsPris"><br><br>
+            <button @click="postAktiehandel">Accepter handel</button>
+
+            <br>
+            <br>
+
             <button @click="getAllAktiehandler">Hent aktiehandler</button>
 
             <table class="OversigtAktieHandel">
@@ -23,6 +31,7 @@
                         <th>Handelspris</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr v-for="aktie in filtherSortedAktiehandler" :key="aktie.id">
                         <td>{{aktie.id}}</td>
