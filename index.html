@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <!-- Import Styles -->
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="nav-bar">
+                
+            </div>
+            <h1>{{title}}</h1>
+            <p>Show indhold: {{showIndhold}}</p>
+            <button class="btn" v-on:click="ChangeShowIndholdStatus">Vis/Vis ikke indhold</button>
+
+            <div v-if="showIndhold" class="indholdsFortegnelse">
+                <p>Denne tamplate indeholder:</p>
+                <ul>
+                    <li v-for="item in indhold">{{item}}</li>
+                </ul>
+            </div>
+
+        </div>
+        </div>
+
+        <!--Import App-->
+            <script src="./js/main.js"></script>
+
+        <!-- Mount App -->
+        <script>
+            const mountedApp = app.mount('#app')
+        </script>
+    </body>
+</html>
